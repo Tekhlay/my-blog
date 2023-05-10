@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: :post_id, class_name: 'Like'
 
   validates :title, presence: true, length: { maximum: 250 }
-  
 
   def update_post_counter
     author.update(posts_counter: author.posts.count)
