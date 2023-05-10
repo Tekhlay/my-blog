@@ -16,8 +16,18 @@
   </div>
 
   <div class="border border-dark border-3 mx-auto w-100 p-3 mb-3">
-    <% @post.most_recent_comments.each_with_index do |comment| %>
-      <p><%= "#{comment.author.name}: #{comment.text}" %></p>
-    <% end %>
+     <% @post.most_recent_comments.each do |comment| %>
+      <%= "#{comment.author.name}: #{comment.text}"%>
+     <% end %>
   </div>
+
+  <div>
+     <h3>Add a comment: </h3>
+       <%= form_for [@post, Comment.new], url: "/comments/#{@post.id}" do |form| %>
+        <div>
+          <%= form.text_area :text, placeholder: "Write new comment...", class: "form-control"%>
+        </div>
+        <%= form.submit "Add Comment", class: "btn btn-outline-secondary m-2" %>
+      <% end %>
+    </div>
 </section>
