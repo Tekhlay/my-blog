@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     if @post.save
       flash[:success] = 'Post created!'
-      redirect_to "/users/#{current_user.id}/posts"
+      redirect_to posts_path(@post)
     else
       flash[:danger] = 'Post not created!'
       render :new, status: :unprocessable_entity
