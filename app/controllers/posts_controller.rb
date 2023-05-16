@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params[:user_id])
-    #@user = User.includes(:posts, :comments).find(params[:user_id])
+    # @user = User.includes(:posts, :comments).find(params[:user_id])
     @posts = @user.posts.includes(:comments).paginate(page: params[:page], per_page: 2)
   end
 
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
     @post.comments_counter = 0
     return unless @post.save
+
     redirect_to user_posts_path
   end
 

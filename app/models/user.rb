@@ -9,7 +9,7 @@ class User < ApplicationRecord
   def posts_counter
     posts.count
   end
-  
+
   def most_recent_posts
     posts.last(3)
   end
