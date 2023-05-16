@@ -1,45 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/index', type: :feature do
-    before(:each) do
-        @user = [
-            User.create(
-                name: 'Tom', 
-                photo: 'https://picsum.photos/300/200', 
-                bio: 'Software Engineer Ethiopia', 
-                posts_counter: 2
-            ),
-            User.create(
-                name: 'Uche',
-                photo: 'https://picsum.photos/300/200',
-                bio: 'Software Engineer from Nigeria',
-                posts_counter: 3
-            )
-        ]
+  before(:each) do
+    @user = [
+      User.create(
+        name: 'Tom',
+        photo: 'https://picsum.photos/300/200',
+        bio: 'Software Engineer Ethiopia',
+        posts_counter: 2
+      )
+    ]
 
-        @first_user = User.first
+    @first_user = User.first
 
-        @first_post = Post.create(
-            author: @first_user, 
-            title: 'Hello', 
-            text: 'This is my first post from Tom',
-            comments_counter: 1,
-            likes_counter: 1
-        )
-        @second_post = Post.create(
-            author: @first_user,
-            title: 'How are you?',
-            text: 'This is my second post from Tom',
-            comments_counter: 0,
-            likes_counter: 1
-        )
-        @first_comment = Comment.create(post: @first_post, author: @first_user, text: 'First comment for Tom')
-        @second_comment = Comment.create(post: @second_post, author: @first_user, text: 'Second comment for Tom')
-        @first_like = Like.create(post: @first_post, author: @first_user)
-        @second_like = Like.create(post: @second_post, author: @first_user)
+    @first_post = Post.create(
+      author: @first_user,
+      title: 'Hello',
+      text: 'This is my first post from Tom',
+      comments_counter: 1,
+      likes_counter: 1
+    )
+    @second_post = Post.create(
+      author: @first_user,
+      title: 'How are you?',
+      text: 'This is my second post from Tom',
+      comments_counter: 0,
+      likes_counter: 1
+    )
+    @first_comment = Comment.create(post: @first_post, author: @first_user, text: 'First comment for Tom')
+    @second_comment = Comment.create(post: @second_post, author: @first_user, text: 'Second comment for Tom')
+    @first_like = Like.create(post: @first_post, author: @first_user)
+    @second_like = Like.create(post: @second_post, author: @first_user)
 
-        visit user_posts_path(@first_user)
-    end
+    visit user_posts_path(@first_user)
+  end
 
   it 'shows the author image' do
     expect(page).to have_css('img')
@@ -73,7 +67,7 @@ RSpec.describe 'posts/index', type: :feature do
     expect(page).to have_content("Likes: #{@first_post.likes_counter}")
   end
 
-  it "show section for pagination if there are more posts than fit on the view" do
+  it 'show section for pagination if there are more posts than fit on the view' do
     expect(page).to have_css('div.pagination')
   end
 
