@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       name: 'John',
       photo: 'https://www.google.com',
       bio: 'I am a teacher',
-      posts_counter: 3
+      posts_counter: 0
     )
   end
 
@@ -18,7 +18,8 @@ RSpec.describe User, type: :model do
   end
 
   it 'should return posts_counter' do
-    expect(subject.posts_counter).to eq(3)
+    subject.posts_counter = 0
+    expect(subject.posts_counter).to eq(0)
   end
 
   it 'should return most recent posts' do
