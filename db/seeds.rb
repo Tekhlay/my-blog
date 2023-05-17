@@ -28,27 +28,31 @@ author2 = User.create!(
 )
 
 post1 = Post.create!(
+  author: author1,
   title: "Post 1",
   text: "This is post 1 body",
-  author: author1
+  comments_counter: 0,
+  likes_counter: 0,
 )
 
 post2 = Post.create!(
+  author: author2,
   title: "Post 2",
   text: "This is post 2 body",
-  author: author2
+  comments_counter: 0,
+  likes_counter: 0,
 )
 
 comment1 = Comment.create!(
-  text: "This is comment 1",
   author: author1,
-  post: post1
+  post: post1,
+  text: "This is comment 1"
 )
 
 comment2 = Comment.create!(
-  text: "This is comment 2",
   author: author2,
-  post: post2
+  post: post2,
+  text: "This is comment 2"
 )
 
 like1 = Like.create!(
