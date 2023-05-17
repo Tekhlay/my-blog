@@ -4,7 +4,7 @@ RSpec.describe 'users/index', type: :feature do
   before(:each) do
     @user = [
       User.create(
-        name: 'Tom',
+        name: 'Tekhlay',
         photo: 'https://picsum.photos/300/200',
         bio: 'Software Engineer Ethiopia',
         posts_counter: 2
