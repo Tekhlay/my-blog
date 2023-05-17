@@ -64,7 +64,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -130,6 +129,11 @@ You can deploy this project using: Herekou
 - Twitter: [@Tekhlay](https://twitter.com/Tekhlayb12)
 - LinkedIn: [Tekhlay](https://linkedin.com/in/tekhlay)
 
+👤 **Uche**
+
+- GitHub: [@Tekhlay](https://github.com/uchexm)
+- Twitter: [@Tekhlay](https://twitter.com/Nwakauc)
+- LinkedIn: [Tekhlay](https://www.linkedin.com/in/nwakauc/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

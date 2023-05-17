@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /users' do
+  let!(:user) { User.create(name: 'Tekhlay', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Ethiopia.') }
+  let!(:post) { Post.create(author: user, title: 'My First Post', text: 'Lorem ipsum') }
+
+  describe 'GET /users/index' do
     before :each do
-      get '/users'
+      get users_path
     end
     it 'returns http success' do
       expect(response).to have_http_status(:success)
@@ -18,13 +21,13 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'shows the correct placeholder text' do
-      expect(response.body).to include('List of All Users')
+      expect(response.body).to include(user.name)
     end
   end
 
   describe 'GET /users/:id' do
     before :each do
-      get '/users/1'
+      get user_path(user.id)
     end
     it 'returns http success' do
       expect(response).to have_http_status(:success)
