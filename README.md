@@ -131,9 +131,9 @@ You can deploy this project using: Herekou
 
 👤 **Uche**
 
-- GitHub: [@Tekhlay](https://github.com/uchexm)
-- Twitter: [@Tekhlay](https://twitter.com/Nwakauc)
-- LinkedIn: [Tekhlay](https://www.linkedin.com/in/nwakauc/)
+- GitHub: [@uchexm](https://github.com/uchexm)
+- Twitter: [@nwakauc](https://twitter.com/Nwakauc)
+- LinkedIn: [@nwakauc](https://www.linkedin.com/in/nwakauc/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
