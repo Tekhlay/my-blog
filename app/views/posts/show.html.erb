@@ -13,11 +13,19 @@
     <div>
       <p> <%= @post.text %></p>
     </div>
+    <div>
+    <% if @user.id == current_user.id %>
+    <%= button_to "Delete Post", user_post_path, method: :delete, class: "bg-danger btn btn-outline-secondary" %>
+    <% end %>
+  </div>
   </div>
 
   <div class="border border-dark border-3 mx-auto w-100 p-3 mb-3">
      <% @post.most_recent_comments.each do |comment| %>
       <%= "#{comment.author.name}: #{comment.text}"%>
+      <% if @user.id == current_user.id %>
+      <%= button_to "Delete Comment", user_post_comment_path(@user, @post, comment), method: :delete, class: "bg-danger mt-1 btn btn-outline-secondary" %>
+      <% end %>
      <% end %>
   </div>
 
@@ -27,7 +35,7 @@
         <div>
           <%= form.text_area :text, placeholder: "Write new comment...", class: "form-control"%>
         </div>
-        <%= form.submit "Add Comment", class: "btn btn-outline-secondary m-2" %>
+        <%= form.submit "Add Comment", class: "bg-success btn btn-outline-secondary m-2" %>
       <% end %>
     </div>
 </section>
