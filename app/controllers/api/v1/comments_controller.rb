@@ -10,6 +10,7 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
       render json: { status: 'Failure', error: 'Post Not Found' }
     end
   end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.author = @auth_user
@@ -20,9 +21,11 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
       render json: { status: 'Failure', error: 'Comment Not Created' }
     end
   end
+
   def find_post_params
     @post = Post.find_by_id(params[:post_id])
   end
+
   def comment_params
     params.require(:comment).permit(:text)
   end
