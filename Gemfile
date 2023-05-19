@@ -7,6 +7,7 @@ ruby '3.2.0'
 gem 'cancancan'
 gem 'devise'
 gem 'jwt'
+gem 'rswag'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
