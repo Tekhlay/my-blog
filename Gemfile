@@ -7,8 +7,8 @@ ruby '3.2.0'
 gem 'cancancan'
 gem 'devise'
 gem 'jwt'
-gem 'rswag'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+gem 'rswag'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
